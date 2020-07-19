@@ -714,6 +714,9 @@
  */
 //#define ENDSTOP_NOISE_THRESHOLD 2
 
+// Check for stuck or disconnected endstops during homing moves.
+//#define DETECT_BROKEN_ENDSTOP
+
 //=============================================================================
 //============================== Movement Settings ============================
 //=============================================================================
@@ -979,7 +982,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 15 // Customized Rbn
+#define PROBING_MARGIN 10 // Customized Rbn
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 6500 // Customized Rbn
@@ -1112,7 +1115,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 235
-#define Y_BED_SIZE 225 // Customized Rbn (Avoid Bltouch to probe over bed clips)
+#define Y_BED_SIZE 215 // Customized Rbn (Avoid Bltouch to probe over bed clips)
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -2209,7 +2212,7 @@
 // then the BLUE led is on. Otherwise the RED led is on. (1C hysteresis)
 //#define TEMP_STAT_LEDS
 
-// SkeinForge sends the wrong arc g-codes when using Arc Point as fillet procedure
+// SkeinForge sends the wrong arc G-codes when using Arc Point as fillet procedure
 //#define SF_ARC_FIX
 
 // Support for the BariCUDA Paste Extruder
