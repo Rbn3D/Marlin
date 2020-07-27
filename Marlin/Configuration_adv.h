@@ -1644,18 +1644,18 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT  15  // Customized Rbn
+  #define PROBING_MARGIN_LEFT  25  // Customized Rbn
   #define PROBING_MARGIN_RIGHT 25  // Customized Rbn
-  #define PROBING_MARGIN_FRONT 15  // Customized Rbn (Avoid Bltouch to probe over bed clips)
-  #define PROBING_MARGIN_BACK  15  // Customized Rbn (Avoid Bltouch to probe over bed clips)
+  #define PROBING_MARGIN_FRONT 25  // Customized Rbn
+  #define PROBING_MARGIN_BACK  25  // Customized Rbn
 #endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
   // Override the mesh area if the automatic (max) area is too large
-  //#define MESH_MIN_X MESH_INSET
-  //#define MESH_MIN_Y MESH_INSET
-  //#define MESH_MAX_X X_BED_SIZE - (MESH_INSET)
-  //#define MESH_MAX_Y Y_BED_SIZE - (MESH_INSET)
+  #define MESH_MIN_X MESH_INSET // Customized Rbn
+  #define MESH_MIN_Y MESH_INSET // Customized Rbn
+  #define MESH_MAX_X X_BED_SIZE - (MESH_INSET) // Customized Rbn
+  #define MESH_MAX_Y Y_BED_SIZE - (MESH_INSET) // Customized Rbn
 #endif
 
 /**
