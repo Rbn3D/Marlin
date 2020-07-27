@@ -978,20 +978,20 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET  { 38.2, -0, -2.000 } // Customized Rbn (TriangleLab DDE Upgrade) (BLtouch)
+#define NOZZLE_TO_PROBE_OFFSET  { 38.2, -0, -2.600 } // Customized Rbn (TriangleLab DDE Upgrade) (BLtouch)
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN 10
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 6500 // Customized Rbn
+#define XY_PROBE_SPEED 5000 // Customized Rbn
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (3*60) // Customized Rbn
+#define Z_PROBE_SPEED_SLOW (2*60) // Customized Rbn
 
 /**
  * Multiple Probing
@@ -1115,11 +1115,11 @@
 
 // The size of the print bed
 #define X_BED_SIZE 235
-#define Y_BED_SIZE 235 - 5 // Customized Rbn (Avoid collsion on Y axis bed tensioner)
+#define Y_BED_SIZE 235 - 20 // Customized Rbn (Avoid collsion on Y axis bed tensioner)
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS - 5 // Customized Rbn (Avoid collsion on Y axis bed tensioner)
+#define Y_MIN_POS -10 // Customized Rbn (Avoid collsion on Y axis bed tensioner)
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE // Customized Rbn (Avoid collsion on Y axis bed tensioner)
@@ -1151,7 +1151,7 @@
 #endif
 
 #if EITHER(MIN_SOFTWARE_ENDSTOPS, MAX_SOFTWARE_ENDSTOPS)
-  //#define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
+  #define SOFT_ENDSTOPS_MENU_ITEM  // Enable/Disable software endstops from the LCD
 #endif
 
 /**
@@ -1162,10 +1162,10 @@
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  * By default the firmware assumes HIGH=FILAMENT PRESENT.
  */
-#define FILAMENT_RUNOUT_SENSOR   // Customized Rbn
+// #define FILAMENT_RUNOUT_SENSOR   
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define NUM_RUNOUT_SENSORS   1     // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_STATE     LOW   // Pin state indicating that filament is NOT present.
+  #define FIL_RUNOUT_STATE     HIGH   // Pin state indicating that filament is NOT present.  // Customized Rbn
   #define FIL_RUNOUT_PULLUP          // Use internal pullup for filament runout pins.
   //#define FIL_RUNOUT_PULLDOWN      // Use internal pulldown for filament runout pins.
 
@@ -1273,7 +1273,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 4 // Customized Rbn
+  #define GRID_MAX_POINTS_X 5 // Customized Rbn
   #define GRID_MAX_POINTS_Y 4 // Customized Rbn
 
   // Probe along the Y axis, advancing X after each column
@@ -1289,7 +1289,7 @@
     // Experimental Subdivision of the grid by Catmull-Rom method.
     // Synthesizes intermediate points to produce a more detailed mesh.
     //
-    #define ABL_BILINEAR_SUBDIVISION // Customized Rbn
+    // #define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
       #define BILINEAR_SUBDIVISIONS 3
@@ -1495,9 +1495,9 @@
 
 // Preheat Constants
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 200 // Customized Rbn
-#define PREHEAT_1_TEMP_BED     58 // Customized Rbn
-#define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
+#define PREHEAT_1_TEMP_HOTEND 210 // Customized Rbn
+#define PREHEAT_1_TEMP_BED     60 // Customized Rbn
+#define PREHEAT_1_FAN_SPEED   203 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "ABS"
 #define PREHEAT_2_TEMP_HOTEND 240
@@ -1664,7 +1664,7 @@
  *
  * :['JAPANESE', 'WESTERN', 'CYRILLIC']
  */
-#define DISPLAY_CHARSET_HD44780 WESTERN // Customized Rbn
+#define DISPLAY_CHARSET_HD44780 JAPANESE
 
 /**
  * Info Screen Style (0:Classic, 1:Prusa)

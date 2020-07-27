@@ -1550,7 +1550,7 @@
  *
  * Warning: Does not respect endstops!
  */
-#define BABYSTEPPING
+//#define BABYSTEPPING  // Customized Rbn
 #if ENABLED(BABYSTEPPING)
   //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the Stepper ISR
   //#define BABYSTEP_WITHOUT_HOMING
@@ -1640,10 +1640,10 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT 10   // Customized Rbn
-  #define PROBING_MARGIN_RIGHT 10  // Customized Rbn
-  #define PROBING_MARGIN_FRONT 25  // Customized Rbn (Avoid Bltouch to probe over bed clips)
-  #define PROBING_MARGIN_BACK 25   // Customized Rbn (Avoid Bltouch to probe over bed clips)
+  #define PROBING_MARGIN_LEFT  15  // Customized Rbn
+  #define PROBING_MARGIN_RIGHT 25  // Customized Rbn
+  #define PROBING_MARGIN_FRONT 15  // Customized Rbn (Avoid Bltouch to probe over bed clips)
+  #define PROBING_MARGIN_BACK  15  // Customized Rbn (Avoid Bltouch to probe over bed clips)
 #endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
