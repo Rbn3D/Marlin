@@ -1644,10 +1644,10 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT  25  // Customized Rbn
-  #define PROBING_MARGIN_RIGHT 25  // Customized Rbn
-  #define PROBING_MARGIN_FRONT 25  // Customized Rbn
-  #define PROBING_MARGIN_BACK  25  // Customized Rbn
+  #define PROBING_MARGIN_LEFT  30  // Customized Rbn
+  #define PROBING_MARGIN_RIGHT 30  // Customized Rbn
+  #define PROBING_MARGIN_FRONT 30  // Customized Rbn
+  #define PROBING_MARGIN_BACK  30  // Customized Rbn
 #endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
@@ -2453,17 +2453,17 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD // Customized Rbn
+  // #define HYBRID_THRESHOLD // Customized Rbn
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
   #define Y_HYBRID_THRESHOLD     100
   #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD      15  // 3  // Customized Rbn
-  #define Z2_HYBRID_THRESHOLD     15  // 3  // Customized Rbn
+  #define Z_HYBRID_THRESHOLD       3  // 3  // Customized Rbn
+  #define Z2_HYBRID_THRESHOLD      3  // 3  // Customized Rbn
   #define Z3_HYBRID_THRESHOLD      3
   #define Z4_HYBRID_THRESHOLD      3
-  #define E0_HYBRID_THRESHOLD     50   //30 // Customized Rbn
+  #define E0_HYBRID_THRESHOLD     30   //30 // Customized Rbn
   #define E1_HYBRID_THRESHOLD     30
   #define E2_HYBRID_THRESHOLD     30
   #define E3_HYBRID_THRESHOLD     30
